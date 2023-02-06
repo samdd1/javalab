@@ -25,3 +25,31 @@ public class Lexicographical
 		}
 	}
 }
+
+or
+
+package add;
+import java.util.*;
+public class Lexico {
+
+	public static void main(String[] args) {
+		int i,n;
+		System.out.println("enter the no of ele");
+		Scanner ob=new Scanner(System.in);
+		n=ob.nextInt();
+		String[] ls=new String[n];
+		System.out.println("enter the str");
+		for(i=0;i<n;i++)
+		{
+			System.out.println(""+(i+1));
+			ls[i]=ob.next();
+			
+		}
+		Arrays.sort(ls);
+		System.out.println("lexico");
+		for(i=0;i<n;i++)
+			System.out.println(""+(i+1)+""+ls[i]);
+
+	}
+
+}
