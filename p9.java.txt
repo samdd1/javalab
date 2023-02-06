@@ -1,55 +1,81 @@
-import java.util.Scanner;
-interface vehicleone{
-		int  speed=90;
-		public void distance();
-}
-
-interface vehicletwo{
-		int distance=100;
-		public void speed();
-}
-
-class Vehicle  implements vehicleone,vehicletwo{
-	public void distance(){
-		int  distance=speed*100; 
-		System.out.println("distance travelled is "+distance);
-	}
-	public void speed(){
-		int speed=distance/100;
-	}
-}
-
-class MultipleInheritanceUsingInterface{
-	public static void main(String args[]){
-		System.out.println("Vehicle");
-		obj.distance();
-		obj.speed();
-	}
-}
-interface vehicleone{
-	int  speed=90;
+package add;
+import java.util.*;
+interface vehicle1{
+	int speed=90;
 	public void distance();
 }
-
-interface vehicletwo{
+interface vehicle2{
 	int distance=100;
 	public void speed();
 }
-
-class Vehicle  implements vehicleone,vehicletwo{
-	public void distance(){
-		int  distance=speed*100; 
-		System.out.println("distance travelled is "+distance);
+public class Multi implements vehicle1,vehicle2{
+	public void distance() {
+		int distance=speed*100;
+		System.out.println("the distance travelled is "+distance);
 	}
-	public void speed(){
+	public void speed() {
 		int speed=distance/100;
+		System.out.println("the speed is "+speed);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Multi p=new Multi();
+		p.distance();
+		p.speed();
 	}
 }
 
-class MultipleInheritanceUsingInterface{
-	public static void main(String args[]){
-		System.out.println("Vehicle");
-		obj.distance();
-		obj.speed();
+
+or
+
+package add;
+import java.util.*;
+interface B{
+	public void Find(int arr[],int n);
+}
+interface C{
+	public void Small(int arr[],int n);
+}
+
+public class Main implements B,C{
+	public void Find(int arr[],int n) {
+		boolean f1=false,f2=false;
+		for(int i=0;i<n;i++)
+		{
+			if(arr[i]==65)
+				f1=true;
+			if(arr[i]==77)
+				f2=true;
+		}
+		if(f1==true && f2==true)
+			System.out.println("both are present");
+		else
+			System.out.println("ele not present");
 	}
+	public void Small(int arr[],int n)
+	{
+		Arrays.sort(arr);
+		System.out.println("Sorted arr");
+		for(int i=0;i<n;i++)
+			System.out.println(arr[i]);
+		System.out.println("smallest ele"+arr[0]);
+		System.out.println("2nd smallest ele"+arr[1]);
+	}
+
+	public static void main(String[] args) {
+		int n;
+		System.out.println("enter the no of ele");
+		Scanner ob=new Scanner(System.in);
+		n=ob.nextInt();
+		int arr[]=new int[n];
+		System.out.println("enter an array");
+		for(int i=0;i<n;i++)
+			arr[i]=ob.nextInt();
+		Main obj=new Main();
+		obj.Find(arr,n);
+		obj.Small(arr,n);
+		
+
+	}
+
 }
