@@ -50,3 +50,47 @@ public class Main implements A
 		}
 	
 }
+
+or
+
+package add;
+import java.util.*;
+interface D{
+	interface E{
+		public void r(int n);
+	}
+}
+public class Happy implements D{
+	public void r(int n) {
+		int f1=0,sum=0,a,c=100;
+		while(n>1 && c>0)
+		{
+			a=n;
+			sum=0;
+			while(a>0)
+			{
+				f1=a%10;
+				sum+=(f1*f1);
+				a/=10;
+			}
+			c--;
+			n=sum;
+		}
+		if(n==1)
+			System.out.println("happy no");
+		else
+			System.out.println("not happy no");
+	}
+
+
+	public static void main(String[] args) {
+		int n;
+		System.out.println("Enter the no");
+		Scanner ob=new Scanner(System.in);
+		n=ob.nextInt();
+		Happy obj=new Happy();
+		obj.r(n);
+
+	}
+
+}
