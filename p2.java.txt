@@ -1,62 +1,69 @@
-import java.util.Scanner;
-
-
- class Matrix{
-    	public  void printArray() 
-    	{
-  	  int array[][]={{1,3,4},{2,4,3},{3,4,5}};    
-    
-//creating another matrix to store transpose of a matrix  
-int transpose[][]=new int[3][3];  //3 rows and 3 columns  
-    
-//Code to transpose a matrix  
-for(int i=0;i<3;i++){    
-for(int j=0;j<3;j++){    
-transpose[i][j]=array[j][i];  
-}    
-}    
-  
-System.out.println("Printing Matrix without transpose:");  
-for(int i=0;i<3;i++){    
-for(int j=0;j<3;j++){    
-System.out.print(array[i][j]+" ");    
-}    
-System.out.println();//new line    
-}    
-System.out.println("Printing Matrix After Transpose:");  
-for(int i=0;i<3;i++){    
-for(int j=0;j<3;j++){    
-System.out.print(transpose[i][j]+" ");    
-}    
-System.out.println();//new line    
+package add;
+import java.util.*;
+public class A {
+	public void func()
+	{
+	int i,j=0,k=0,n;
+	Scanner ob=new Scanner(System.in);
+	System.out.println("enter the ele");
+	n=ob.nextInt();
+	int a[]=new int[n];
+	int b[]=new int[n];
+	int c[]=new int[n];
+	System.out.println("enter the ele");
+	for(i=0;i<n;i++)
+		a[i]=ob.nextInt();
+	for(i=0;i<n;i++)
+		if(a[i]%2==0)
+		{
+			b[j]=a[i];
+			j++;
+		}
+		else
+		{
+			c[k]=a[i];
+			k++;
+		}
+	System.out.println("ele are even");
+	for(i=0;i<j;i++)
+		System.out.println(""+b[i]);
+	System.out.println("ele are odd");
+	for(i=0;i<k;i++)
+		System.out.println(""+c[i]);
+	}
 }
-}
+
+package add;
+
+import java.util.*;
+
+public class mat extends A{
+	public void func() {
+		int i,j,n;
+		System.out.println("enter the no of row and col");
+		Scanner ob=new Scanner(System.in);
+		n=ob.nextInt();
+		int a[][]=new int[10][10];
+		System.out.println("enter the ele");
+		for(i=0;i<n;i++)
+			for(j=0;j<n;j++)
+				a[i][j]=ob.nextInt();
+		System.out.println("trans is");
+		for(i=0;i<n;i++)
+		{
+			System.out.println("");
+			for(j=0;j<n;j++)
+			{
+				System.out.print(" "+a[j][i]);
+			}
+		}
+		super.func();
+	}
+
+	public static void main(String[] args) {
+		mat ob=new mat();
+		ob.func();
+	}
+
 }
 
-
- public class Even_Odd extends Matrix { 
-  
-    	// Print array method 
- 	   public void printArray() 
-  	  { 
-     		   super.printArray();
-      		  int a[]={1,2,5,6,3,2};  
-System.out.println("Odd Numbers:");  
-for(int i=0;i<a.length;i++){  
-if(a[i]%2!=0){  
-System.out.println(a[i]);  
-}  
- }  
-System.out.println("Even Numbers:");  
-for(int i=0;i<a.length;i++){  
-if(a[i]%2==0){  
-System.out.println(a[i]);  
-}  
-     }  
-    } 
-    public static void main(String[] args) 
-    { 
-        Even_Odd k = new Even_Odd();
-        k.printArray();
-    }
-}
