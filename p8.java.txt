@@ -21,3 +21,51 @@ class HelperService {
     }
 }
 
+or
+
+package add;
+
+import java.util.Scanner;
+
+public class Overloading {
+	public static void auto(int n) {
+		int s=n*n,c=0;
+		while(n>0) {
+			if(n%10!=s%10) {
+				System.out.println("not automorphic");
+				c=1;
+				break;
+			}
+			n=n/10;
+			s=s/10;
+		}
+		if(c==0) {
+			System.out.println("it is automorphic");
+		}
+	}
+	public static void auto(int n,int a) {
+		int r,s=0,num=n;
+		while(n>0) {
+			r=n%10;
+			n=n/10;
+			s+=(r*r*r);
+		}
+		if(s==num) {
+			System.out.println("it is amstrong no");
+		}
+		else {
+			System.out.println("not amstrong no");
+		}
+	}
+
+	public static void main(String[] args) {
+		int n;
+		Scanner ob=new Scanner(System.in);
+		System.out.println("enter the no");
+		n=ob.nextInt();
+		auto(n);
+		auto(n,1);
+
+	}
+
+}
